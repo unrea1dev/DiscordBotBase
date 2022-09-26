@@ -1,0 +1,16 @@
+{
+    "bot": {
+        "token": "Bot token here",
+        "prefix": "!",
+        "cogs": [
+            "cogs.bot.events",
+            "cogs.user.events"
+        ]
+    },
+    "database": {
+        "database": "sqlite://database.db"
+    },
+    "logs": {
+        "path": "log.log"
+    }
+}
