@@ -16,7 +16,7 @@ class BotEvents(Cog):
 
     @Cog.listener()
     async def on_ready(self) -> None:
-        await database.create_connection(database = config.database.database)
+        await database.create_connection(url = config.database.database)
         logging.info('Bot started')
 
     async def on_close(self) -> None:
