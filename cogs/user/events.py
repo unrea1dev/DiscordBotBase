@@ -12,5 +12,6 @@ class UserEvents(Cog):
         user = await User.filter(guild_id = member.guild.id, user_id = member.id).first()
         if not user:
             user = await User.create(guild_id = member.guild.id, user_id = member.id)
+            
 def setup(bot : Bot):
     bot.add_cog(UserEvents(bot))

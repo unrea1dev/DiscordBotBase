@@ -1,13 +1,7 @@
-from tortoise.models import Model
 from tortoise import fields
+from database.base import BaseModel
 
-class BaseModel(Model):
-    id = fields.IntField(pk = True)
-
-    def __repr__(self) -> str:
-        return '<{}{}>'.format(self.__class__.__name__, self.__str__())
-
-class BaseModel(BaseModel):
+class User(BaseModel):
     guild_id = fields.BigIntField()
     user_id = fields.BigIntField()
 
