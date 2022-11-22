@@ -1,8 +1,9 @@
 from loader import bot
 from core import config
 
-from utils import logging
+from utils.logging import initialize_logging
 
 if __name__ == '__main__':
-    logging.create_logging(path = config.logs.path)
+    initialize_logging(path = config.logging.path)
+    
     bot.run(config.bot.token)

@@ -8,10 +8,10 @@ class Bot(ConfigStructure):
 class Database(ConfigStructure):
     database : str = 'sqlite://database.db'
 
-class Logs(ConfigStructure):
+class Logging(ConfigStructure):
     path : str = 'log.log'
 
 class Config(ConfigStructure):
     bot : Bot = Bot()
     database : Database = Database()
-    logs : Logs = Logs()
+    logging : Logging = Logging()

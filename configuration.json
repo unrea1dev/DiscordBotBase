@@ -10,7 +10,7 @@
     "database": {
         "database": "sqlite://database.db"
     },
-    "logs": {
+    "logging": {
         "path": "log.log"
     }
 }
