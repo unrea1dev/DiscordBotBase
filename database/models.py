@@ -7,12 +7,3 @@ class User(BaseModel):
 
     class Meta:
         table = 'users'
-
-    def __str__(self) -> str:
-        return str(
-            {
-                'id' : self.id,
-                'guild_id' : self.guild_id,
-                'user_id' : self.user_id
-            }
-        )
