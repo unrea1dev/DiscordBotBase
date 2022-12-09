@@ -3,7 +3,7 @@ from nextcord.ext.commands import Bot, Cog
 
 from database.models import User
 
-class UserEvents(Cog):
+class User_Events(Cog):
     def __init__(self, bot : Bot) -> None:
         self.bot = bot
 
@@ -14,4 +14,4 @@ class UserEvents(Cog):
             user = await User.create(guild_id = member.guild.id, user_id = member.id)
             
 def setup(bot : Bot):
-    bot.add_cog(UserEvents(bot))
+    bot.add_cog(User_Events(bot))

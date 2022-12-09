@@ -1,11 +1,10 @@
 import asyncio, signal, logging, os
 from nextcord.ext.commands import Bot, Cog
 
+import database
 from core import config
 
-import database
-
-class BotEvents(Cog):
+class Bot_Events(Cog):
     def __init__(self, bot : Bot) -> None:
         self.bot = bot
         signal.signal(signal.SIGINT, self.close_handler)
@@ -25,4 +24,4 @@ class BotEvents(Cog):
         os._exit(0)
 
 def setup(bot : Bot):
-    bot.add_cog(BotEvents(bot))
+    bot.add_cog(Bot_Events(bot))

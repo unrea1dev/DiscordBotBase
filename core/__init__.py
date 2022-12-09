@@ -1,4 +1,3 @@
-from . import configuration
-
-structure = configuration.Config()
-config = structure.create_config(name = 'configuration')
+from . import models
+from . import base
+from . base import create_connection, close_connection
