@@ -1,3 +1,2 @@
-from . import models
-from . import base
-from . base import create_connection, close_connection
+from . import base, configuration
+from . base import config
