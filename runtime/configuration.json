@@ -8,9 +8,9 @@
         ]
     },
     "database": {
-        "database": "sqlite://database.db"
+        "database": "sqlite://runtime/database.db"
     },
     "logging": {
-        "path": "log.log"
+        "path": "runtime/log.log"
     }
 }

@@ -6,10 +6,10 @@ class Bot(AbstractConfiuration):
     cogs : list[str] = ['cogs.bot.events', 'cogs.user.events']
 
 class Database(AbstractConfiuration):
-    database : str = 'sqlite://database.db'
+    database : str = 'sqlite://runtime/database.db'
 
 class Logging(AbstractConfiuration):
-    path : str = 'log.log'
+    path : str = 'runtime/log.log'
 
 class Config(AbstractConfiuration):
     bot : Bot = Bot()
