@@ -1,30 +1,30 @@
-import asyncio, signal, logging, os
+import logging
 from nextcord.ext.commands import Bot, Cog
 
-import database
 from core import config
+import database
 
-class Bot_Events(Cog):
+class BotEventsCog(Cog):
     def __init__(self, bot : Bot) -> None:
         self.bot = bot
-        signal.signal(signal.SIGINT, self.close_handler)
-    
-    def close_handler(self, signal, frame) -> None:
-        loop = asyncio.get_event_loop()
-        loop.create_task(self.on_close())
 
+        self.original_close = self.bot.close
+        self.bot.close = self.on_disconnect
     @Cog.listener()
     async def on_ready(self) -> None:
-        logging.info('Bot connected')
+        logging.info('Bot connected. Latency {} ms!'.format(round(self.bot.latency, 2)))
         
-        await database.create_connection(url = config.database.database)
+        await database.create_connection(
+            url = config.database.database, 
+            timezone = config.database.timezone
+        )
 
         logging.info('Connected to database. Bot is running')
-
-    async def on_close(self) -> None:
+    
+    async def on_disconnect(self) -> None:
         await database.close_connection()
-        logging.info('Bot closed')
-        os._exit(0)
+        await self.original_close()
+
 
 def setup(bot : Bot):
-    bot.add_cog(Bot_Events(bot))
+    bot.add_cog(BotEventsCog(bot))

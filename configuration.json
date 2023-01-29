@@ -4,11 +4,12 @@
         "prefix": "!",
         "cogs": [
             "cogs.bot.events",
-            "cogs.user.events"
+            "cogs.members.events"
         ]
     },
     "database": {
-        "database": "sqlite://runtime/database.db"
+        "database": "sqlite://runtime/database.db",
+        "timezone": "UTC"
     },
     "logging": {
         "path": "runtime/log.log"
