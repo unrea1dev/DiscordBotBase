@@ -1,8 +1,7 @@
-from misc import AbstractConfiuration
+from core.background import AbstractConfiuration
 
 class Bot(AbstractConfiuration):
     token : str = 'Bot token here'
-    prefix : str = '!'
     cogs : list[str] = ['cogs.bot.events']
 
 class Database(AbstractConfiuration):
