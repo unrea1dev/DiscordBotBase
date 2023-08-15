@@ -6,4 +6,4 @@ Simple pattern for discord bots based on nextcord
 - Easy config system
 - Logs
 
-https://github.com/unrea1projects/DiscordBotBase
+https://github.com/unrea1dev/DiscordBotBase
